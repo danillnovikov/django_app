@@ -7,12 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Links:</h1>
-    <ol>
-    {% for link in links %}
-    <b><li> {{link.name}}</b>: {{link.links}}</li><br>
-    {% endfor %}
-    </ol>
-    
+    <h1>{{pk}}</h1>
+    <table border=1>
+        <tr>
+            <td><b>#</b></td>
+            <td><b>name</b></td>
+            <td><b>links for VLC</b></td>
+            <td><b>actions</b></td>
+        </tr>
+        
+        {% for link in links %}
+        <tr>
+            <td>{{link.pk}}</td>
+            <td><a href="{% url 'videos-detail' link.pk %}">{{link.name}}</a></td>
+            <td>{{link.links}}</td>
+            <td><a href="{% url 'videos-delete' link.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'videos-create' %}">ADD Video </a>
 </body>
 </html>
