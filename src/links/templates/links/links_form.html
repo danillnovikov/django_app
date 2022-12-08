@@ -7,15 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add Video!</h1>
-    {{form_data}}
+    <h1>(CBV)Add Video!</h1>
+    
     <form action="" method="post">
         {% csrf_token %} 
-        {% comment %} <input type="text" name="name" required><br> {% endcomment %}
-        {% comment %} <input type="text" name="links"><br> {% endcomment %}
         {{form.as_p}} 
         <button>Add</button>
     </form>
     
 </body>
-</html>
+</html>ы

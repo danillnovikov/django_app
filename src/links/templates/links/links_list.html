@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{pk}}</h1>
+    <h1>(CBV){{pk}}</h1>
     <table border=1>
         <tr>
             <td><b>#</b></td>
@@ -16,19 +16,19 @@
             <td><b>actions</b></td>
         </tr>
         
-        {% for link in links %}
+        {% for link in object_list %}
         <tr>
             <td>{{link.pk}}</td>
             <td><a href="{% url 'videos-detail-cbv' link.pk %}">{{link.name}}</a></td>
             <td>{{link.links}}</td>
             <td>
-                <a href="{% url 'videos-delete' link.pk %}">Delete</a>
+                <a href="{% url 'videos-delete-cbv' link.pk %}">Delete</a>
                 <a href="{% url 'videos-update' link.pk %}">Update</a>
             
             </td>
         </tr>
         {% endfor %}
     </table>
-    <a href="{% url 'videos-create' %}">ADD Video </a>
+    <a href="{% url 'videos-create-cbv' %}">ADD Video </a>
 </body>
 </html>

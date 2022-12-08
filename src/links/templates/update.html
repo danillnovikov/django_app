@@ -11,9 +11,8 @@
     {{form_data}}
     <form action="" method="post">
         {% csrf_token %} 
-        {% comment %} <input type="text" name="name" required><br> {% endcomment %}
-        {% comment %} <input type="text" name="links"><br> {% endcomment %}
-        {{form.as_p}} 
+       Name: <input type="text" name="name" required value="{{link.name}}"><br>
+       Link: <input type="text" name="links" value="{{link.links}}"><br>
         <button>Add</button>
     </form>
     

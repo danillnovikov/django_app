@@ -21,9 +21,14 @@ from links import views
 urlpatterns = [
     path('admin/', admin.site.urls),   # http://127.0.0.1:8000/admin/
     path('links/', views.links_list, name="videos-list"),    # http://127.0.0.1:8000/links/
+    path('links-cbv/', views.LinksList.as_view(), name="videos-list-cbv"),    # http://127.0.0.1:8000/links/
     path('links/<int:pk>/', views.links_detail, name="videos-detail"), # http://127.0.0.1:8000/links/
+    path('links-cbv/<int:pk>/', views.LinksDetail.as_view(), name="videos-detail-cbv"), # http://127.0.0.1:8000/links/
     path('links-delete/<int:pk>/', views.links_delete, name="videos-delete"), # http://127.0.0.1:8000/links/
+    path('links-delete-cbv/<int:pk>/', views.LinksDelete.as_view(), name="videos-delete-cbv"), # http://127.0.0.1:8000/links/
     path('links-create/', views.links_create, name="videos-create"), # http://127.0.0.1:8000/links/
+    path('links-create-cbv/', views.LinksCreate.as_view(), name="videos-create-cbv"), # http://127.0.0.1:8000/links/
+    path('links-update/<int:pk>/', views.links_update, name="videos-update"), # http://127.0.0.1:8000/links/
     # 1. http://127.0.0.1:8000/links/*/            (URL)
     # 2. http://127.0.0.1:8000/links/?links_id=4 (Get)
     # 3. key:value, key:value                     (POST)
